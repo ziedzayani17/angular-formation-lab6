@@ -8,7 +8,7 @@
 
 ## _prérequis :_
 
-- Récuperer le code du LAB1 (https://github.com/ziedzayani17/angular-formation-lab5.git)
+- Récuperer le code du LAB5 (https://github.com/ziedzayani17/angular-formation-lab5.git)
 - voir la définition de service rest http://35.180.103.223:8080/swagger-ui.html
 
 <br/>
