@@ -1,0 +1,51 @@
+<div style="margin-top: 20px;margin-left: auto;margin-right: auto;width: 70%;" class="ui teal segment">
+<div class="ui form error">
+<form class="ui form" [formGroup]="movieForm" (ngSubmit)="registerMovie()">
+    
+    <div class="field">
+      <label>Nom</label>
+      <input type="text"  placeholder="Nom de film" formControlName="name" >
+    </div>
+    <div *ngIf="movieForm.controls.name.touched && movieForm.controls.name.errors"> 
+        <div class="ui error message" *ngIf="movieForm.controls.name.hasError('required')">
+            <p>Le champ nom est obligatoire</p>
+        </div>
+        <div class="ui error message" *ngIf="movieForm.controls.name.errors.minlength">
+            <p>Le champ nom doit contenir au minumun 4 characteres </p>
+        </div>
+    </div>
+
+
+    <div class="field">
+      <label>Catégorie</label>
+      <input type="text"  placeholder="Catégorie de film" formControlName="category">
+    </div>
+
+
+    <div class="field">
+        <label>Pays</label>
+        <input type="text"  placeholder="Pays" formControlName="pays">
+    </div>
+
+
+    <div class="field">
+        <label>Date de sortie</label>
+        <input type="text"  placeholder="Date de sortie" formControlName="releaseDate">
+    </div>
+
+    <div class="field">
+      <label>Text</label>
+      <textarea formControlName="description" ></textarea>
+    </div>
+
+
+    <button style="float: right;" class="ui submit button" type="submit" >Enregistrer</button>
+
+  </form>
+
+  <div *ngIf="message" class="ui floating message">
+    <p>{{ message }}</p>
+  </div>
+
+</div>
+</div>
